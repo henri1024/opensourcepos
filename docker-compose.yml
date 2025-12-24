@@ -15,6 +15,12 @@ services:
         networks:
             - app_net
         volumes:
+            - ./app/Controllers/Items.php:/app/app/Controllers/Items.php
+            - ./app/Views/items/manage.php:/app/app/Views/items/manage.php
+            - ./app/Models/Stock_location.php:/app/app/Models/Stock_location.php
+            - ./app/Helpers/tabular_helper.php:/app/app/Helpers/tabular_helper.php
+            - ./app/Database/Migrations/20251225000000_add_items_view_permission.php:/app/app/Database/Migrations/20251225000000_add_items_view_permission.php
+            - ./app/Database/tables.sql:/app/app/Database/tables.sql
             - uploads:/app/public/uploads
             - logs:/app/writable/logs
         environment:
